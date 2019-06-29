@@ -14,7 +14,6 @@ export const Notifications = () => {
   const [notifications, setRemainNotifications] = useState([...Array(48).keys()]);
   const [locations, setLocations] = useState([{ x:getX(), y:getY() }]);
   const [currNotifications, setCurrNotifications] = useState([{ 0:'4', 1:'9'}]);
-  const [animation ,setAnimation] = useState('');
   const [skillsProgress, setSkillsProgress] = useState({
     growth: 10,
     belong: 10,

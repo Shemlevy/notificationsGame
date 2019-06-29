@@ -15,5 +15,4 @@ export const TextProgress = styled.div`
   &:first-child {
     font-size: 12.3em;  
   }
-  transition: all 3s ease-in-out;
 `;
