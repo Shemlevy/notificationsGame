@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c7b2891166e570cb9a67ff5c29fd8484",
+    "revision": "4fb36e156265e2f62bad3223a6ce3e3c",
     "url": "/notificationsGame/index.html"
   },
   {
-    "revision": "4b0ad3e8d6e1af54ff82",
+    "revision": "9cd3eadc21eb9df88bc4",
     "url": "/notificationsGame/static/css/main.f3cf1f97.chunk.css"
   },
   {
-    "revision": "c3e5f73c7b28749aa51b",
-    "url": "/notificationsGame/static/js/2.5a34c5cd.chunk.js"
+    "revision": "6dbfd2ac4793049f7cd5",
+    "url": "/notificationsGame/static/js/2.6b978a3b.chunk.js"
   },
   {
-    "revision": "4b0ad3e8d6e1af54ff82",
-    "url": "/notificationsGame/static/js/main.0d1711b9.chunk.js"
+    "revision": "9cd3eadc21eb9df88bc4",
+    "url": "/notificationsGame/static/js/main.a026662a.chunk.js"
   },
   {
     "revision": "4148302a0af663f6904b",
