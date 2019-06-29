@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Swipe } from 'react-swipe-component'
+import { Swipeable } from "react-swipeable";
+
 
 import { NotificationBox } from './style';
 import { skills, barUpSound, barDownSound, trashSounds } from '../consts';
@@ -44,13 +45,6 @@ export const Notifications = () => {
       ...currNotifications,
      nextNotification
       ]);
-    //
-    // if (currNotifications.length) {
-    //   console.log(currNotifications)
-    //   const currSkill = skills[currNotifications[currNotifications.length - 1][0]];
-    //   console.log(currSkill)
-    //   currSkill.sound.play();
-    // }
     if (currNotifications.length === 60) {
       setDelay(null);
       setGameTempo(null);
@@ -69,7 +63,6 @@ export const Notifications = () => {
 
   const onSwipedLeft = (type, category, notification) => {
     const isRight = type === 'good';
-
     setCurrNotifications(currNotifications.filter((_,idx) => idx !== notification));
     setLocations(locations.filter((_,idx) => idx !== notification));
     const newProgress = skillsProgress[category] + (isRight ? 10 : -10);
@@ -84,7 +77,9 @@ export const Notifications = () => {
     setCurrNotifications(currNotifications.filter((_,idx) => idx !== notification));
     setLocations(locations.filter((_,idx) => idx !== notification));
     trashSounds.play();
-  };
+  }
+
+
 
   return (
     <>
@@ -99,14 +94,21 @@ export const Notifications = () => {
           const notificationType = currSkill.notifications[currNotifications[idx][1]].type;
           const category = currSkill.title;
           return (
-            <Swipe key={idx} onSwipedLeft={() => onSwipedLeft(notificationType, category, idx)} onSwipedRight={() => onSwipedRight(notificationType, category, idx)}>
+              <Swipeable
+                key={idx}
+                trackMouse
+                preventDefaultTouchmoveEvent
+                onSwipedLeft={() => onSwipedLeft(notificationType, category, idx)}
+                onSwipedRight={() => onSwipedRight(notificationType, category, idx)}
+              >
               <NotificationBox top={location.x} left={location.y}>
                 <img src={src} style={{width:'350px'}} />
               </NotificationBox>
-            </Swipe>
+            </Swipeable>
           )
         })
       }
     </>
   );
 };
+
